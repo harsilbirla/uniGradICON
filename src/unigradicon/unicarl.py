@@ -1,6 +1,5 @@
 import itk
 import os
-from datetime import datetime
 
 import footsteps
 import numpy as np
