@@ -46,6 +46,10 @@ __all__ = [
     "wrap_unet_with_se",
     "AMPTrainer",
     "train_kernel_amp",
+    "GPIORegistrar",
+    "instance_optimize_gp",
+    "DivCurlLoss",
+    "AdaptiveDivCurlLoss",
 ]
 
 
@@ -62,6 +66,11 @@ def __getattr__(name):
         "AMPTrainer": ("amp_training", "AMPTrainer"),
         "train_kernel_amp": ("amp_training", "train_kernel_amp"),
         "make_scaler": ("amp_training", "make_scaler"),
+        "GPIORegistrar": ("gradient_projection_io", "GPIORegistrar"),
+        "instance_optimize_gp": ("gradient_projection_io", "instance_optimize_gp"),
+        "gradient_projection": ("gradient_projection_io", "gradient_projection"),
+        "DivCurlLoss": ("divcurl_regularization", "DivCurlLoss"),
+        "AdaptiveDivCurlLoss": ("divcurl_regularization", "AdaptiveDivCurlLoss"),
     }
     if name in _registry:
         module_name, class_name = _registry[name]
